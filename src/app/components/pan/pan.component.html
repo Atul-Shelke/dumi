@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center "  >
+        
+     <form [formGroup]="panForm"  >
+         <!-- <div class="form-fields-container" cdkDragBoundary=".example-boundary" cdkDrag>  -->
+        <label>Pan No:</label>
+        <input class="form-control" formControlName="panNo"  [ngClass]="{'invalid-input': panForm.controls.panNo.invalid && panForm.controls.panNo.touched}">
+    
+        <div *ngIf="panForm.controls.panNo.invalid && panForm.controls.panNo.touched">
+            <span class="text-danger" *ngIf="panForm.controls.panNo.errors?.pattern">
+                Pan Number should start with a capital letter followed by 9 alphanumeric characters.
+            </span>
+            <span class="text-danger" *ngIf="panForm.controls.panNo.errors?.required">
+                Pan Number is required.
+            </span>
+        </div>
+
+      
+        <!-- </div>  -->
+     </form>
+    </div>
+     
+
+</div>

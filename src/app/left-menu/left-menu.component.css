@@ -1,0 +1,15 @@
+.left-menu{
+    width:200px;
+    height: 100vh;
+    background-color:#e5e5e5;
+    padding-top: 15px;
+}
+
+.compfield{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:5px;
+    border-color:#6ab445;
+    
+
+}

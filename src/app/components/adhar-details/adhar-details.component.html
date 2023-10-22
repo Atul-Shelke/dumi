@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+     <form [formGroup]="adharForm" >
+        <label>Adhar No:</label>
+        <input class="form-control" formControlName="adharNo" [ngClass]="{'invalid-input':adharForm.controls. adharNo.invalid && adharForm.controls. adharNo.touched}">
+    
+        <div *ngIf="adharForm.controls.adharNo.invalid && adharForm.controls.adharNo.touched">
+            <span class="text-danger" *ngIf="adharForm.controls.adharNo.errors?.pattern">
+                Aadhar Should contain 12 digits.
+            </span>
+            <span class="text-danger" *ngIf="adharForm.controls.adharNo.errors?.required">
+                Aadhar Number is required.
+            </span>
+        </div>
+      
+     </form>
+    </div>
+
+</div>

@@ -1,0 +1,46 @@
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="left-menu">
+      <div cdkDropList [cdkDropListData]="formComponents"  [cdkDropListConnectedTo]="formData" (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let component of formComponents" class="mb-3 border" cdkDrag [cdkDragData]="component">
+         
+          <button  class="ml-3 btn btn-primary d-grid gap-2 ">{{component.name}}</button>
+
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+    <div cdkDropList [cdkDropListData]="formData"   [cdkDropListConnectedTo]="formComponents" >
+      <div class="row d-flex justify-content-center">
+          <div class="example-box" *ngFor="let item of formData" > 
+            <div *ngIf="item.component == 'pan-com'">
+                <app-pan ></app-pan>
+            </div>
+            <div *ngIf="item.component == 'adhar-com'">
+              <app-adhar-details ></app-adhar-details>
+            </div>
+          </div>
+        </div>
+       </div>
+      <!-- <div class="col-md-6" cdkDropList [cdkDropListData]="formData" (cdkDropListDropped)="drop($event)">
+      <app-sign-up *ngFor="let item of formData" *ngIf="item.component == 'sign-up'">
+        <div *ngIf="item.component == 'pan-com'">
+          <app-pan ></app-pan>
+      </div>
+      <div *ngIf="item.component == 'adhar-com'">
+        <app-adhar-details ></app-adhar-details>
+      </div>
+      </app-sign-up>
+    </div>-->
+    </div>
+  
+  </div>
+
+ 

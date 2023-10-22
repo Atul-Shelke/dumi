@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+     <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+        <label>Date:</label>
+        <input type="date" class="form-control" formControlName="date" [ngClass]="{'invalid-input':dateForm.controls.date.invalid && dateForm.controls.date.touched}">
+    
+        <div *ngIf="dateForm.controls.date.invalid && dateForm.controls.date.touched">
+           
+            <span class="text-danger" *ngIf="dateForm.controls.date.errors?.required">
+                Date is required.
+            </span>
+        </div>
+      
+     </form>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+     <form [formGroup]="numberForm" (ngSubmit)="onSubmit()">
+        <label>Mobile Number:</label>
+        <input type="number" class="form-control" formControlName="number" [ngClass]="{'invalid-input':numberForm.controls.number.invalid && numberForm.controls.number.touched}">
+    
+        <div *ngIf="numberForm.controls.number.invalid && numberForm.controls.number.touched">
+           
+            <span class="text-danger" *ngIf="numberForm.controls.number.errors?.required">
+                Number  is required.
+            </span>
+            <span class="text-danger" *ngIf="numberForm.controls.number.errors?.pattern">
+                Mobile Number should contain 10 digits
+            </span>
+        </div>
+      
+     </form>
+    </div>
+
+</div>

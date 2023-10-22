@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+        <label>First Name:</label>
+        <input type="text" class="form-control" formControlName="firstname" [ngClass]="{'invalid-input':userForm.controls.firstname.invalid && userForm.controls.firstname.touched}">
+    
+        <div *ngIf="userForm.controls.firstname.invalid && userForm.controls.firstname.touched">
+           
+            <span class="text-danger" >
+                Username  is required.
+            </span>
+           
+        </div>
+    </div>
+    <div>
+        <label>Last Name:</label>
+        <input type="text" class="form-control" formControlName="lastname" [ngClass]="{'invalid-input':userForm.controls.lastname.invalid && userForm.controls.lastname.touched}">
+    
+        <div *ngIf="userForm.controls.lastname.invalid && userForm.controls.lastname.touched">
+           
+            <span class="text-danger" >
+                Lastname  is required.
+            </span>
+        
+</div>
+    </div>
+
+    <div>
+        <label>Current Address:</label>
+        <!-- <input  class="form-control" formControlName="lastname" [ngClass]="{'invalid-input':userForm.controls.lastname.invalid && userForm.controls.lastname.touched}"> -->
+        <textarea class="form-control" formControlName="cAddress" ></textarea>
+        
+        
+</div>
+
+<div>
+    <label>Permanent Address:</label>
+    <!-- <input  class="form-control" formControlName="lastname" [ngClass]="{'invalid-input':userForm.controls.lastname.invalid && userForm.controls.lastname.touched}"> -->
+    <textarea class="form-control" formControlName="pAddress" ></textarea>
+    
+    
+</div>
+
+<div>
+    <label>Mobile Number:</label>
+        <input type="number" class="form-control" formControlName="mobileno" [ngClass]="{'invalid-input':userForm.controls.mobileno.invalid && userForm.controls.mobileno.touched}">
+    
+        <div *ngIf="userForm.controls.mobileno.invalid && userForm.controls.mobileno.touched">
+           
+            <span class="text-danger" *ngIf="userForm.controls.mobileno.errors?.required">
+                Number  is required.
+            </span>
+            <span class="text-danger" *ngIf="userForm.controls.mobileno.errors?.pattern">
+                Mobile Number should contain 10 digits
+            </span>
+        </div>
+</div>
+    
+<div>
+    <label>Pin Code:</label>
+        <input type="number" class="form-control" formControlName="pincode" [ngClass]="{'invalid-input':userForm.controls.pincode.invalid && userForm.controls.pincode.touched}">
+    
+        <div *ngIf="userForm.controls.pincode.invalid && userForm.controls.pincode.touched">
+           
+            <span class="text-danger" *ngIf="userForm.controls.pincode.errors?.required">
+                Pin code  is required.
+            </span>
+            <span class="text-danger" *ngIf="userForm.controls.pincode.errors?.pattern">
+                Pin code should contain 6 digits
+            </span>
+        </div>
+</div>
+
+     </form>
+    </div>
+
+</div>
